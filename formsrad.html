@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscrição – Rádio Escolar</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+    body{
+        text-align: center;
+    }
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.18);
+      --glass-border: rgba(255, 255, 255, 0.35);
+      --text-color: #ffffff;
+      --bg-gradient: linear-gradient(135deg, #6a0dad, #f5c542);
+    }
+.nav-btn::after {
+      content: "";
+      position: center;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.5), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-btn:hover::after {
+      opacity: 1;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.96);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+      .nav-btn {
+        font-size: 1rem;
+        max-width: 210px;
+      }
+         .bottom-nav {
+        justify-content: center;
+      }
+       .nav-btn {
+      min-width: 70px;
+      padding: 0.85rem 0.9rem;
+      text-align: center;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.45),
+        rgba(255,255,255,0.15)
+      );
+      border: 1px solid var(--glass-border);
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.28s ease,
+        background 0.28s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+      position: relative;
+      overflow: hidden;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Fundo fosco */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      z-index: -1;
+    }
+
+    header {
+      padding: 2rem 1.5rem 1.2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    /* Container Glass */
+    .form-container {
+      width: 100%;
+      max-width: 720px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 0.8rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    iframe {
+      width: 100%;
+      height: 85vh;
+      border: none;
+      border-radius: 18px;
+      background: transparent;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      iframe {
+        height: 75vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inscrição Para Rádio</h1>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd-wJ_lXGwfnclp6AGNPtbSFaH9fEHgC_FlcDfgf42tjKrrWw/viewform?usp=publish-editor"
+        loading="lazy">
+      </iframe>
+    </div>
+  </main>
+<a class="nav-btn" href="index.html" target="_blank">Página Inicial</a>
+  <footer>
+    © Grêmio Geração Consciente
+  </footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grêmio Geração Consciente</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.2);
+      --glass-border: rgba(255, 255, 255, 0.35);
+      --text-color: #ffffff;
+      --bg-gradient: linear-gradient(135deg, #6a0dad, #f5c542);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-x: hidden;
+    }
+
+    /* Fundo fosco */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      z-index: -1;
+    }
+
+    header {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      opacity: 0.95;
+      font-size: 1rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main p {
+      max-width: 520px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Barra inferior estilo iOS */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 0.8rem 1.2rem;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-top: 1px solid var(--glass-border);
+      text-align: center;
+    }
+
+    .nav-btn {
+      min-width: 70px;
+      padding: 0.85rem 0.9rem;
+      text-align: center;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.45),
+        rgba(255,255,255,0.15)
+      );
+      border: 1px solid var(--glass-border);
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.28s ease,
+        background 0.28s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Efeito de luz (iOS-like) */
+    .nav-btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.5), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-btn:hover::after {
+      opacity: 1;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.96);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+
+    /* Responsividade */
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-btn {
+        font-size: 1rem;
+        max-width: 210px;
+      }
+
+      .bottom-nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title">Grêmio Geração Consciente</h1>
+    <p>Representando os estudantes e fortalecendo a participação escolar</p>
+  </header>
+
+  <main>
+    <p>
+      Bem-vindo ao site do Grêmio Estudantil. Em breve, você encontrará projetos,
+      comunicados e ações que fortalecem a voz dos estudantes.
+    </p>
+  </main>
+
+  <nav class="bottom-nav">
+    <!-- Botões Liquid Glass -->
+    <button class="nav-btn" onclick="indisponivel()">Projetos</button>
+    <a class="nav-btn" href="formsrad.html" target="_blank">Rádio Escolar</a>
+    <button class="nav-btn" onclick="indisponivel()">Eventos</button>
+    <button class="nav-btn" onclick="indisponivel()">Contato</button>
+  </nav>
+
+  <script>
+    function indisponivel() {
+      alert('Função indisponível no momento. Em breve teremos novidades.');
+    }
+  </script>
+</body>
+</html>
