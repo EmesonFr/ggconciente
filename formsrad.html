@@ -67,8 +67,8 @@
         box-shadow 0.28s ease,
         background 0.28s ease;
       box-shadow: 0 10px 26px rgba(0,0,0,0.28);
-      position: relative;
-      overflow: hidden;
+      position: center;
+      
     }
     * {
       box-sizing: border-box;
@@ -85,7 +85,7 @@
       flex-direction: column;
     }
 
-    /* Fundo fosco */
+
     body::before {
       content: "";
       position: fixed;
@@ -120,7 +120,6 @@
       padding: 1rem;
     }
 
-    /* Container Glass */
     .form-container {
       width: 100%;
       max-width: 720px;
@@ -162,6 +161,9 @@
 <body>
   <header>
     <h1>Inscrição Para Rádio</h1>
+    <a class="nav-btn" href="prrojetos.html" target="_blank">PROJETOS</a>
+     <a class="nav-btn" href="index.html" target="_blank">PAGINA INICIAL</a>
+     <a class="nav-btn" onclick="indisponivel()">CONTATO</a>
   </header>
 
   <main>
@@ -172,9 +174,9 @@
       </iframe>
     </div>
   </main>
-<a class="nav-btn" href="index.html" target="_blank">Página Inicial</a>
+
   <footer>
-    © Grêmio Geração Consciente
+   Desenvolvido pelo Grêmio Geração Consciente
   </footer>
 </body>
 </html>
