@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana Ecológica | Grêmio Geração Consciente</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+    :root {
+      --glass-border: rgba(255, 255, 255, 0.35);
+      --text-color: #ffffff;
+      --bg-gradient: linear-gradient(135deg, #6a0dad, #f5c542);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      z-index: -1;
+    }
+
+    header {
+      padding: 2.5rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .content-box {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 25px 55px rgba(0,0,0,0.4);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .day-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    }
+
+    .symbols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .symbol {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: 500;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.8rem 1rem 2.5rem;
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+
+      .days {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 0.8rem 1.2rem;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-top: 1px solid var(--glass-border);
+      text-align: center;
+    }
+
+    .nav-btn {
+      min-width: 70px;
+      padding: 0.85rem 0.9rem;
+      text-align: center;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.45),
+        rgba(255,255,255,0.15)
+      );
+      border: 1px solid var(--glass-border);
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition:
+        transform 0.28s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.28s ease,
+        background 0.28s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+  
+    .nav-btn::after {
+      content: "";
+      position: center;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.5), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-btn:hover::after {
+      opacity: 1;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.96);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+
+
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-btn {
+        font-size: 1rem;
+        max-width: 210px;
+      }
+
+      .bottom-nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Semana Ecológica</h1>
+    <p>Meio Ambiente e a Biodiversidade Brasileira</p>
+    <a class="nav-btn" href="prrojetos.html" target="_blank">PROJETOS</a>
+     <a class="nav-btn" href="index.html" target="_blank">PAGINA INICIAL</a>
+     <button class="nav-btn" onclick="indisponivel()">ATA DE PRESENÇA</button>
+  </header>
+
+  <main>
+    <div class="content-box">
+
+      <section>
+        <h2>Sobre o Projeto</h2>
+        <p>
+          O projeto tem como tema central o <strong>Meio Ambiente e a Biodiversidade Brasileira</strong>,
+          com o objetivo de conscientizar os estudantes sobre a importância da preservação da natureza
+          e da rica biodiversidade existente no Brasil.
+        </p>
+        <p>
+          As atividades serão desenvolvidas ao longo de <strong>três dias</strong>, integrando
+          educação, ciência e arte de maneira criativa, participativa e reflexiva.
+        </p>
+      </section>
+
+      <section>
+        <h2>Programação</h2>
+
+        <div class="days">
+          <div class="day-card">
+            <h3> 1º Dia – Educação Ambiental</h3>
+            <p>
+              Realização de palestras educativas abordando temas como biodiversidade brasileira,
+              sustentabilidade, preservação ambiental, impactos da ação humana e o cuidado com os ecossistemas.
+            </p>
+          </div>
+
+          <div class="day-card">
+            <h3> 2º Dia – Dinâmicas Educativas</h3>
+            <p>
+              Participação dos alunos em dinâmicas e brincadeiras educativas, reforçando os conhecimentos
+              de forma lúdica e estimulando o trabalho em equipe e a conscientização ambiental.
+            </p>
+          </div>
+
+          <div class="day-card">
+            <h3>3º Dia – Cultura e Sustentabilidade</h3>
+            <p>
+              Apresentação dos murais temáticos e realização do desfile ecológico com o Casal Ecológico,
+              utilizando roupas produzidas com materiais recicláveis.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Murais e Desfile Ecológico</h2>
+        <p>
+          Cada sala produzirá um mural explicativo apresentando a justificativa e o significado da roupa criada,
+          os materiais recicláveis utilizados, o elemento da biodiversidade representado e a mensagem ambiental
+          transmitida ao público.
+        </p>
+      </section>
+
+      <section>
+        <h2>Símbolos da Biodiversidade Brasileira</h2>
+        <p>
+          O projeto trabalha 12 símbolos da biodiversidade brasileira, representando a diversidade dos
+          ecossistemas e a necessidade de preservação ambiental:
+        </p>
+
+        <div class="symbols">
+          <div class="symbol"> Onça-pintada</div>
+          <div class="symbol"> Arara-azul</div>
+          <div class="symbol"> Mico-leão-dourado</div>
+          <div class="symbol"> Vitória-régia</div>
+          <div class="symbol"> Mandacaru</div>
+          <div class="symbol"> Ipê-amarelo</div>
+          <div class="symbol"> Tartaruga-marinha</div>
+          <div class="symbol"> Abelha nativa</div>
+          <div class="symbol"> Boto-cor-de-rosa</div>
+          <div class="symbol"> Pau-brasil</div>
+          <div class="symbol"> Coral-marinho</div>
+          <div class="symbol"> Lobo-guará</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+     
+  <footer>
+    Projeto desenvolvido pelo Grêmio Estudantil – Geração Consciente
+  </footer>
+
+</body>
+</html>
